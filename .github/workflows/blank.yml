@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  SHA8: ${{ GITHUB_SHA:8 }}
+  SHA8: ${{GITHUB_SHA::8}}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,4 +28,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo ${{ GITHUB_SHA:8 }}
+          echo ${{ GITHUB_SHA }}
