@@ -3,7 +3,7 @@ name: CI-test-2
 on: 
   push:
     tags:
-      - test**
+      - test.**
 
 jobs:
   sample:
