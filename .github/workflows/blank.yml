@@ -38,17 +38,3 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo ${{ env.GITHUB_SHA }}
-          
----
-
-name: CI-test-2
-on: 
-  push:
-    tags:
-      - test*
-jobs:
-  sample:
-    runs-on: ubuntu-latest
-    steps:
-      - name: test
-        run: echo "Here is a tagged call"
