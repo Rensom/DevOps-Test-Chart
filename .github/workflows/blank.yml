@@ -3,6 +3,8 @@ name: CI-test
 # Controls when the workflow will run
 on:
   push:
+    tags-ignore:
+      - test*
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -27,8 +29,26 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo $SHA8
-
+      - name: test-tag
+        run: |
+          TAG_NAME="test-${{ github.run_id }}"
+          git tag $TAG_NAME
+          git push --tags
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           echo ${{ env.GITHUB_SHA }}
+          
+---
+
+name: CI-test-2
+on: 
+  push:
+    tags:
+      - test*
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "Here is a tagged call"
