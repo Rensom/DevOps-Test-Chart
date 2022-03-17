@@ -2,8 +2,7 @@ name: CI-test-2
 
 on: 
   push:
-    tags:
-      - v1.**
+    tags: ['v1.*']
 
 jobs:
   sample:
