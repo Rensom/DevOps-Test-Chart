@@ -4,7 +4,7 @@ name: CI-test
 on:
   push:
     tags-ignore:
-      - test*
+      - v1.**
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -31,7 +31,7 @@ jobs:
         run: echo $SHA8
       - name: test-tag
         run: |
-          TAG_NAME="test-${{ github.run_id }}"
+          TAG_NAME="v1.${{ github.run_id }}"
           git tag $TAG_NAME
           git push --tags
       # Runs a set of commands using the runners shell
