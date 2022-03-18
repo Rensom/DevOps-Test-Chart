@@ -1,0 +1,13 @@
+name: CI-test-3
+
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: |
+        echo ${{ secrets.TEST_SECRET }} | base64 -d > .env
