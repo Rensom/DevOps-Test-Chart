@@ -10,3 +10,8 @@ jobs:
     steps:
       - name: test
         run: echo ${{ secrets.TEST_SECRET }} | base64 -d > secret_env
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test_env
+          path: secret_env
