@@ -22,7 +22,7 @@ jobs:
         with:
           url: https://secrets.fusionworks.md:8200
           token: ${{ secrets.VAULT_TOKEN }}
-          tlsSkipVerify: true
+          caCertificate: ${{ secrets.VAULT_CA_CERT }}
           method: token
           secrets: |
             iFood/dev_env DB_PORT | DB_PORT;
