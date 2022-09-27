@@ -2,6 +2,8 @@ name: Vault
 
 on: 
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
