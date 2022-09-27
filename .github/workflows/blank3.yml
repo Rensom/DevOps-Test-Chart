@@ -20,4 +20,4 @@ jobs:
       - name: Next step
         run: |
           curl -H "X-Vault-Token: ${{ secrets.VAULT_TOKEN }}" https://secrets.fusionworks.md/v1/general/data/secret | jq '.data.data' | jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" > secret_env;
-          echo secret_env
+          cat secret_env
