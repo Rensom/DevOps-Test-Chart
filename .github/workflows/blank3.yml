@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.VAULT_TOKEN }}
           method: token
           secrets: |
-            iFood/data/dev_env DB_PORT | DB_PORT;
+            iFood/data/dev_env | DB_PORT;
       - name: Next step
         run: |
           echo "${{ steps.secrets.outputs.DB_PORT }}"
