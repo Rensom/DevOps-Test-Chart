@@ -23,8 +23,8 @@ jobs:
           url: https://secrets.fusionworks.md
           token: ${{ secrets.VAULT_TOKEN }}
           caCertificate: ${{ secrets.VAULT_CA_CERT }}
-          secrets: general/super-secret | API_DEV_VALUES
-          
+          secrets: |
+            secret/general/super-secret | API_DEV_VALUES;
       - name: Next step
         run: |
           echo "${{ steps.secrets.outputs.API_DEV_VALUES }}"
