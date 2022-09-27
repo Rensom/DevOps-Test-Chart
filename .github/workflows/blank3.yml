@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.VAULT_TOKEN }}
           caCertificate: ${{ secrets.VAULT_CA_CERT }}
           secrets: |
-            iFood/dev_env/DB_PORT | DB_PORT;
+            iFood/dev_env DB_PORT | DB_PORT;
       - name: Next step
         run: |
           echo "${{ steps.secrets.outputs.DB_PORT }}"
