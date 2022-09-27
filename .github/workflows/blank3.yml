@@ -24,7 +24,7 @@ jobs:
           token: ${{ secrets.VAULT_TOKEN }}
           caCertificate: ${{ secrets.VAULT_CA_CERT }}
           secrets: |
-            secret/general/super-secret | API_DEV_VALUES;
+            iFood/dev_env | API_DEV_VALUES;
       - name: Next step
         run: |
           echo "${{ steps.secrets.outputs.API_DEV_VALUES }}"
