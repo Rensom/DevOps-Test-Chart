@@ -23,6 +23,7 @@ jobs:
           url: http://secrets.fusionworks.md
           token: ${{ secrets.VAULT_TOKEN }}
           tlsSkipVerify: true
+          method: token
           secrets: |
             iFood/dev_env DB_PORT | DB_PORT;
       - name: Next step
