@@ -20,11 +20,11 @@ jobs:
       - name: Import Secrets
         uses: hashicorp/vault-action@v2.4.0
         with:
-          url: http://secrets.fusionworks.md:8200
+          url: https://secrets.fusionworks.md
           token: ${{ secrets.VAULT_TOKEN }}
           method: token
           secrets: |
-            iFood/dev_env DB_PORT | DB_PORT;
+            iFood/data/dev_env DB_PORT | DB_PORT;
       - name: Next step
         run: |
           echo "${{ steps.secrets.outputs.DB_PORT }}"
