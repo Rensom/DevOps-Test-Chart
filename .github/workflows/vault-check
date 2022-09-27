@@ -1,9 +1,8 @@
 name: Vault
 
 on: 
-  workflow_dispatch
-  push
-
+  push:
+  workflow_dispatch:
 
 jobs:
 
